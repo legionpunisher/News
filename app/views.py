@@ -6,7 +6,7 @@ from app import app
 def index():
     
     title = 'Homep welcome to the best news website online'
-    return render_template('index.html',message = message)
+    return render_template('index.html',title = title)
 
 @app.route ('/news/<int:news_id>')
 def news(news_id):
