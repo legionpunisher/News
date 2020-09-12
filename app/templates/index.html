@@ -10,7 +10,12 @@
 </head>
 
 <body>
-
+    <h3>News Category</h3>
+    <ul>
+        {% for news_category in category %}
+        <li>{{ news_category.title}}</li>
+        {% endfor %}
+    </ul>
 </body>
 
 </html>
