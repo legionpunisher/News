@@ -1,6 +1,7 @@
 from flask import render_template
 from app import app
-from .request import get_news
+from newsapi import NewsApiClient
+from .request import get_sources
 
 #Views
 
@@ -11,8 +12,8 @@ def index():
     View root page function that returns the index page and its data
     '''
 
-    # Getting news category
-    news_category = get_news('category')
-    print(news_category)
+     # Getting popular movie
+    source = get_sources()   
+    # print(source)
     title = 'THE BEST NEWS SITE IN THE WORLD'
-    return render_template('index.html', title = title,category = news_category)
+    return render_template('index.html', title = title,sources=source)

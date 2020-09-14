@@ -5,17 +5,18 @@
     <meta charset="UTF-8"> {% if title %}
     <title>{{ title }}</title>
     {% else %}
-    <title>Welcome to the best news website</title>
-    {{% endif %}}
+    <title>THE BEST NEWS SITE IN THE WORLD</title>
+    {% endif %}
 </head>
 
 <body>
-    <h3>News Category</h3>
+    <h3>News Media</h3>
     <ul>
-        {% for news_category in category %}
-        <li>{{ news_category.title}}</li>
+        {% for source in sources %}
+        <li>{{ source.name}}</li>
         {% endfor %}
     </ul>
+
 </body>
 
 </html>
