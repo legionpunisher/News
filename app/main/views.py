@@ -5,7 +5,7 @@ from .request import get_sources,get_source
 
 #Views
 
-@app.route('/')
+@main.route('/')
 def index():
 
     '''
@@ -13,12 +13,16 @@ def index():
     '''
 
      # Getting popular movie
-    source = get_sources()   
+    source = get_sources()       
     # print(source)
     title = 'THE BEST NEWS SITE IN THE WORLD'
     return render_template('index.html', title = title,sources=source)
-@app.route('/source/<int:id>')
-def source(id):
-    source = get_source(id)
-    title = f'{source.title}'
-    return render_template('source.html',title=title,source = source)
+@main.route('/article/<id>')
+def article(id):
+
+    '''
+    View article page function that returns the various article details page and its data
+    '''
+    # title= 'Articles'
+    articles = article_source(id)
+    return render_template('article.html',articles= articles,id=id )
