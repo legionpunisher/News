@@ -1,21 +1,9 @@
-{% import 'macros.html' as macro%}
-<!DOCTYPE html>
-<html>
+{% import 'macros.html' as macro%} {% extends 'base.html'%}
+<!-- content block -->
+{% block content %}
+<h3>NEWS SOURCE</h3>
+<ul>
+    {{macro.displaySourceList(sources)}}
+</ul>
 
-<head>
-    <meta charset="UTF-8"> {% if title %}
-    <title>{{ title }}</title>
-    {% else %}
-    <title>THE BEST NEWS SITE IN THE WORLD</title>
-    {% endif %}
-</head>
-
-<body>
-    <h3>NEWS SOURCE</h3>
-    <ul>
-        {{macro.displaySourceList(sources)}}
-    </ul>
-
-</body>
-
-</html>
+{% endblock%}
